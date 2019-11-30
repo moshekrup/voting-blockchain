@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -e
+
+script_dir="$(dirname "$(realpath "$0")")"
+cd "$script_dir"
+
+tendermint_dir="$script_dir/tendermint"
+tendermint_version=0.31.5
+uid=502
+gid=20
+
+run_tendermint() {
+  docker run \
+    --rm \
+    --user $uid:$gid \
+    -v $(pwd)/tendermint:/tendermint \
+    tendermint/tendermint:v$tendermint_version \
+    "$@"
+}
+
+replace_value() {
+  key="$1"
+  value="$2"
+
+  sed --in-place "s|$1 = .*|$1 = $2|g" "$tendermint_dir/config/config.toml"
+}
+
+if [ ! -d "$tendermint_dir" ]; then
+  echo "$tendermint_dir doesn't exist, not creating"
+  
+  mkdir "$tendermint_dir"
+  chown $uid:$gid "$tendermint_dir"
+  
+  run_tendermint init
+
+  replace_value proxy_app '"tcp://bigchaindb:26658"'
+  replace_value addr_book_strict 'false'
+  replace_value create_empty_blocks 'false'
+fi
+
+echo -n "Node ID: "
+run_tendermint show_node_id

@@ -1,0 +1,45 @@
+{
+  "name": "vote-chain",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.7.0",
+    "@material-ui/icons": "^4.5.1",
+    "@types/react": "^16.9.13",
+    "@types/react-leaflet": "^2.5.0",
+    "color": "^3.1.2",
+    "leaflet": "^1.6.0",
+    "lodash": "^4.17.15",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-leaflet": "^2.6.0",
+    "react-minimal-pie-chart": "^5.0.2",
+    "react-scripts": "3.2.0",
+    "react-timeago": "^4.4.0",
+    "react-transition-group": "^4.3.0",
+    "recharts": "^1.8.5",
+    "typescript": "^3.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@types/color": "^3.0.0",
+    "@types/lodash": "^4.14.149",
+    "@types/react-timeago": "^4.1.1",
+    "@types/recharts": "^1.8.3",
+    "npm-check-updates": "^3.2.2"
+  }
+}
