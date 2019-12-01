@@ -5,8 +5,8 @@ const databaseName = mongoCreds.database
 
 const candidates = [
   {name: 'Bibi Habibi', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/19/Benjamin_Netanyahu_2018.jpg'},
-  {name: 'Pikachu', imageUrl: 'https://www.smashbros.com/assets_v2/img/fighter/pikachu/main.png'},
-  {name: 'Jigglypuf', imageUrl: 'https://www.smashbros.com/assets_v2/img/fighter/jigglypuff/main.png'}
+  {name: 'Benny Gantz', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Benny_Gantz_2019.jpg'},
+  {name: 'Chuck Norris', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg'}
 ];
 
 const getCandidates = async(req, res, next) => {

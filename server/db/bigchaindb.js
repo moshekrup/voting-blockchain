@@ -1,9 +1,6 @@
 const BigchainDB = require('bigchaindb-driver');
 const { dbchainhost }  = require('../config');
 const cryptoUtils = require('../utils/crypto');
-// const API_PATH = 'https://localhost:9984/api/v1/';
-// const conn = new BigchainDB.Connection(API_PATH);
-// return conn;
 
 let connection;
 const getInstance = () => {
@@ -34,8 +31,6 @@ const signedTransaction = (tx, key) => {
 }
 
 const getKeyPair = () => {
-    // return new BigchainDB.Ed25519Keypair()
-
     return new BigchainDB.Ed25519Keypair(cryptoUtils.getWallet());
 }
 
